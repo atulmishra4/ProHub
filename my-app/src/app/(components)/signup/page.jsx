@@ -89,7 +89,6 @@ export default function page() {
           <p className="text-gray-600 mb-12">
             Choose your account type to get started
           </p>
-
           <div className="grid md:grid-cols-2 gap-8">
             {/* Company Card */}
             <motion.div

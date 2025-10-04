@@ -1,6 +1,7 @@
 "use client"
 import React, {useState} from 'react'
 import { motion } from 'framer-motion';
+import { href } from 'react-router-dom';
 
 
 export default function page() {
@@ -39,29 +40,15 @@ export default function page() {
           </div>
           <motion.button
             id="get-started-btn"
-            onClick={() => setPage("signup")}
+            // onClick={() => setPage("/signup")}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
             className="bg-blue-600 text-white px-4 py-2 rounded-md transition-all duration-300 hover:bg-blue-700"
           >
-            Get Started
+              <a href="/signup">Get Started</a>
           </motion.button>
         </div>
       </nav>
-
-      {/* Page Switching */}
-      {/* {page === "home" && <HomePage setPage={setPage} />}
-      {page === "opportunities" && <OpportunitiesPage />}
-      {page === "about" && <AboutPage />}
-      {page === "contact" && <ContactPage setPage={setPage} />}
-      {page === "signup" && <SignUpPage />}  */}
-
-
-      {/* Footer */}
-      {/* <Footer /> */}
-      
-
-      
     </div>
   )
 }
