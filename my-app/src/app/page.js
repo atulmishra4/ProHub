@@ -1,6 +1,7 @@
 "use client"
+import React, {useState} from 'react'
 import Image from "next/image";
-import {motion} from "framer-motion";
+import {motion, useAnimate} from "framer-motion";
 import Link from "next/link";
 
 
@@ -170,9 +171,9 @@ export default function Home() {
             ))}
           </div>
         </div>
-        {/* <Link href="/aboutus">About</Link>
+        <Link href="/aboutus">About</Link>
         <Link href="/contact">Contact</Link>
-        <Link href="/signup">Sign Up</Link> */}
+        <Link href="/signup">Sign Up</Link>
       </section>
     </>
   );
