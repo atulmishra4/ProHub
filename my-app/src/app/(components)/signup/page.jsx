@@ -100,7 +100,6 @@ export default function page() {
               onClick={() => setUserType("company")}
               className="bg-white p-8 rounded-2xl shadow-lg cursor-pointer border-2 border-transparent hover:border-blue-500 transition-all"
             >
-              <div className="text-5xl mb-4">🏢</div>
               <h3 className="text-2xl font-bold text-blue-600 mb-3">
                 I'm a Company
               </h3>
@@ -127,7 +126,6 @@ export default function page() {
               onClick={() => setUserType("contractor")}
               className="bg-white p-8 rounded-2xl shadow-lg cursor-pointer border-2 border-transparent hover:border-indigo-500 transition-all"
             >
-              <div className="text-5xl mb-4">👷</div>
               <h3 className="text-2xl font-bold text-indigo-600 mb-3">
                 I'm a Contractor
               </h3>
