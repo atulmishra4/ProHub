@@ -610,7 +610,7 @@ export default function page() {
                   Contractor Details
                 </h3>
 
-                <div className="grid md:grid-cols-2 gap-4">
+                <div className="grid text-gray-600 md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-medium mb-2">
                       Business Type *
@@ -675,7 +675,7 @@ export default function page() {
                   </div>
                 </div>
 
-                <div>
+                <div className='text-gray-600'>
                   <label className="block text-sm font-medium mb-2">
                     Service Domains * (Select all that apply)
                   </label>
@@ -698,7 +698,7 @@ export default function page() {
                   </div>
                 </div>
 
-                <div>
+                <div className='text-gray-600'>
                   <label className="block text-sm font-medium mb-2">
                     Certifications (Comma separated)
                   </label>
@@ -712,7 +712,7 @@ export default function page() {
                   />
                 </div>
 
-                <div>
+                <div className='text-gray-600'>
                   <label className="block text-sm font-medium mb-2">
                     Previous Client References
                   </label>
