@@ -14,7 +14,7 @@ export default function page() {
   ];
   
   return (
-    <div className="min-h-screen pt-0 bg-gray-50 @media (min-width: 768px) { bg-gray-100 } text-gray-900">
+    <div className="pb-1 pt-0 bg-gray-50 @media (min-width: 768px) { bg-gray-100 } text-gray-900">
       {/* Navbar */}
       <nav className="bg-white shadow-md sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
