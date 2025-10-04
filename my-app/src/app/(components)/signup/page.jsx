@@ -211,7 +211,7 @@ export default function page() {
                   Basic Information
                 </h3>
 
-                <div className="grid md:grid-cols-2 gap-4">
+                <div className="grid text-gray-600 md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-medium mb-2">
                       {userType === "company" ? "Company Name" : "Business Name"} *
@@ -273,7 +273,7 @@ export default function page() {
                   </div>
                 </div>
 
-                <div>
+                <div className="grid text-gray-600 md:grid-cols-2 ">
                   <label className="block text-sm font-medium mb-2">
                     Password *
                   </label>
@@ -289,7 +289,7 @@ export default function page() {
                   />
                 </div>
 
-                <div>
+                <div className='grid text-gray-600 md:grid-cols-2'>
                   <label className="block text-sm font-medium mb-2">
                     Confirm Password *
                   </label>
@@ -331,7 +331,7 @@ export default function page() {
                   Address & Legal Details
                 </h3>
 
-                <div>
+                <div className='text-gray-600'>
                   <label className="block text-sm font-medium mb-2">
                     Registered Address *
                   </label>
@@ -346,7 +346,7 @@ export default function page() {
                   />
                 </div>
 
-                <div className="grid md:grid-cols-3 gap-4">
+                <div className="grid text-gray-600 md:grid-cols-3 gap-4">
                   <div>
                     <label className="block text-sm font-medium mb-2">
                       City *
@@ -438,7 +438,7 @@ export default function page() {
                   </div>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-4">
+                <div className="grid text-gray-600 md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-medium mb-2">
                       GSTIN *
@@ -520,7 +520,7 @@ export default function page() {
                   Company Details
                 </h3>
 
-                <div className="grid md:grid-cols-2 gap-4">
+                <div className="grid text-gray-600 md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-medium mb-2">
                       Employee Size *
