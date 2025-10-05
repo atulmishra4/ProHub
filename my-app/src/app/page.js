@@ -24,12 +24,11 @@ export default function Home() {
             A transparent and fair Bid Management Company for IT maintenances.
           </p>
           <motion.button
-            onClick={() => setPage("opportunities")}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
             className="bg-white text-blue-600 px-6 py-3 rounded-lg shadow-md font-semibold transition-all duration-300 hover:bg-gray-100"
           >
-            Explore Opportunities
+            <a href="/opportunities">Explore Opportunities</a>
           </motion.button>
         </div>
       </header>
@@ -171,9 +170,9 @@ export default function Home() {
             ))}
           </div>
         </div>
-        <Link href="/aboutus">About</Link>
+        {/* <Link href="/aboutus">About</Link>
         <Link href="/contact">Contact</Link>
-        <Link href="/signup">Sign Up</Link>
+        <Link href="/signup">Sign Up</Link> */}
       </section>
     </>
   );
