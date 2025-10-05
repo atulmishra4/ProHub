@@ -6,26 +6,8 @@ import { motion } from 'framer-motion';
 
 export default function page() {
       const [viewProjects, setViewProjects] = useState(false);
-  const [postProject, setPostProject] = useState(false);
-  const [projects, setProjects] = useState([
-    {
-      title: "Network Infrastructure Upgrade",
-      domain: "Networking",
-      companySize: "Enterprise",
-      scale: "Large-Scale",
-      budget: "$200,000",
-      company: "TechCorp Ltd",
-      desc: "Upgrade LAN/WAN for a multinational firm with 5000+ employees.",
-    },
-    {
-      title: "Cloud Migration",
-      domain: "Cloud",
-      companySize: "Medium",
-      scale: "Mid-Scale",
-      budget: "$50,000",
-      company: "SkyData Pvt Ltd",
-      desc: "Migrate applications and data to AWS for a regional IT company.",
-    },
+      const [postProject, setPostProject] = useState(false);
+      const [projects, setProjects] = useState([
   ]);
 
   const [newProject, setNewProject] = useState({
@@ -86,7 +68,7 @@ export default function page() {
               onClick={() => setViewProjects(!viewProjects)}
               className="bg-blue-600 text-white px-6 py-3 rounded-lg shadow-md font-semibold transition-all duration-300 hover:bg-blue-700"
             >
-              {viewProjects ? "Hide Projects" : "View Projects"}
+              <a href="/projects">View Projects</a>
             </motion.button>
 
             {/* Show Project Categories */}
@@ -143,10 +125,11 @@ export default function page() {
               onClick={() => setPostProject(!postProject)}
               className="bg-blue-600 text-white px-6 py-3 rounded-lg shadow-md font-semibold transition-all duration-300 hover:bg-blue-700"
             >
-              {postProject ? "Cancel" : "Post a Project"}
+              <a href='/projectlisting'>Post a Project</a>
+              
             </motion.button>
 
-            {/* Post Project Form */}
+            {/* Post Project Form
             {postProject && (
               <form
                 onSubmit={handleSubmit}
@@ -197,40 +180,40 @@ export default function page() {
                   <option value="">Select Domain</option>
 
                   {/* Core Infrastructure */}
-                  <option value="Networking">Networking</option>
+                  {/* <option value="Networking">Networking</option>
                   <option value="Cloud Computing">Cloud Computing</option>
                   <option value="Hardware & Infrastructure">Hardware & Infrastructure</option>
                   <option value="Operating Systems">Operating Systems</option>
                   <option value="Data Center Management">Data Center Management</option>
-                  <option value="Storage Solutions">Storage Solutions</option>
+                  <option value="Storage Solutions">Storage Solutions</option> */}
 
                   {/* Software & Development */}
-                  <option value="Software Development">Software Development</option>
+                  {/* <option value="Software Development">Software Development</option>
                   <option value="Web Development">Web Development</option>
                   <option value="Mobile App Development">Mobile App Development</option>
                   <option value="Full Stack Development">Full Stack Development</option>
                   <option value="Application Integration">Application Integration</option>
                   <option value="Software Testing & QA">Software Testing & QA</option>
-                  <option value="UI/UX Design">UI/UX Design</option>
+                  <option value="UI/UX Design">UI/UX Design</option> */}
 
                   {/* Security */}
-                  <option value="Cybersecurity">Cybersecurity</option>
+                  {/* <option value="Cybersecurity">Cybersecurity</option>
                   <option value="Information Security">Information Security</option>
                   <option value="Network Security">Network Security</option>
                   <option value="Cloud Security">Cloud Security</option>
                   <option value="Application Security">Application Security</option>
-                  <option value="Compliance & Risk Management">Compliance & Risk Management</option>
+                  <option value="Compliance & Risk Management">Compliance & Risk Management</option> */}
 
                   {/* Data & Analytics */}
-                  <option value="Database Management">Database Management</option>
+                  {/* <option value="Database Management">Database Management</option>
                   <option value="Data Warehousing">Data Warehousing</option>
                   <option value="Big Data">Big Data</option>
                   <option value="Data Analytics">Data Analytics</option>
                   <option value="Business Intelligence">Business Intelligence</option>
-                  <option value="Data Engineering">Data Engineering</option>
+                  <option value="Data Engineering">Data Engineering</option> */}
 
                   {/* AI & Automation */}
-                  <option value="Artificial Intelligence">Artificial Intelligence</option>
+                  {/* <option value="Artificial Intelligence">Artificial Intelligence</option>
                   <option value="Machine Learning">Machine Learning</option>
                   <option value="Deep Learning">Deep Learning</option>
                   <option value="Natural Language Processing">Natural Language Processing</option>
@@ -239,38 +222,38 @@ export default function page() {
                   <option value="Autonomous Systems">Autonomous Systems</option>
 
                   {/* DevOps & CI/CD */}
-                  <option value="DevOps">DevOps</option>
+                  {/* <option value="DevOps">DevOps</option>
                   <option value="CI/CD">CI/CD</option>
                   <option value="Containerization (Docker, Kubernetes)">Containerization (Docker, Kubernetes)</option>
                   <option value="Infrastructure as Code">Infrastructure as Code</option>
-                  <option value="Monitoring & Observability">Monitoring & Observability</option>
+                  <option value="Monitoring & Observability">Monitoring & Observability</option> */}
 
                   {/* IT Services & Support */}
-                  <option value="IT Support">IT Support</option>
+                  {/* <option value="IT Support">IT Support</option>
                   <option value="Helpdesk Solutions">Helpdesk Solutions</option>
                   <option value="Managed IT Services">Managed IT Services</option>
                   <option value="System Administration">System Administration</option>
                   <option value="IT Consulting">IT Consulting</option>
-                  <option value="Disaster Recovery & Backup">Disaster Recovery & Backup</option>
+                  <option value="Disaster Recovery & Backup">Disaster Recovery & Backup</option> */}
 
                   {/* Telecom & IoT */}
-                  <option value="Telecommunications">Telecommunications</option>
+                  {/* <option value="Telecommunications">Telecommunications</option>
                   <option value="Internet of Things (IoT)">Internet of Things (IoT)</option>
                   <option value="Industrial IoT">Industrial IoT</option>
                   <option value="Smart Devices">Smart Devices</option>
-                  <option value="5G & Wireless Technologies">5G & Wireless Technologies</option>
+                  <option value="5G & Wireless Technologies">5G & Wireless Technologies</option> */}
 
                   {/* Emerging Tech */}
-                  <option value="Blockchain">Blockchain</option>
+                  {/* <option value="Blockchain">Blockchain</option>
                   <option value="Web3 Development">Web3 Development</option>
                   <option value="AR/VR Development">AR/VR Development</option>
                   <option value="Metaverse Solutions">Metaverse Solutions</option>
                   <option value="Quantum Computing">Quantum Computing</option>
                   <option value="Edge Computing">Edge Computing</option>
-                  <option value="Digital Twins">Digital Twins</option>
+                  <option value="Digital Twins">Digital Twins</option> */}
 
                   {/* Specialized IT */}
-                  <option value="ERP Solutions">ERP Solutions</option>
+                  {/* <option value="ERP Solutions">ERP Solutions</option>
                   <option value="CRM Solutions">CRM Solutions</option>
                   <option value="HR Tech">HR Tech</option>
                   <option value="FinTech Solutions">FinTech Solutions</option>
@@ -278,8 +261,8 @@ export default function page() {
                   <option value="EdTech">EdTech</option>
                   <option value="E-Commerce Solutions">E-Commerce Solutions</option>
                   <option value="Supply Chain Tech">Supply Chain Tech</option>
-                </select>
-                <input
+                </select>  */}
+                {/* <input
                   type="text"
                   name="scale"
                   placeholder="Project Scale (Small, Mid, Large)"
@@ -300,8 +283,7 @@ export default function page() {
                 >
                   Submit Project
                 </button>
-              </form>
-            )}
+              </form>  */}
           </motion.div>
         </div>
       </div>

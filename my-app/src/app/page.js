@@ -129,12 +129,12 @@ export default function Home() {
         </p>
         <motion.button
           id="get-started-btn "
-          onClick={() => setPage("signup")}
+          // onClick={() => setPage("signup")}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
           className="bg-white text-blue-600 px-6 py-3 rounded-lg shadow-md font-semibold transition-all duration-300 hover:bg-gray-100"
         >
-          Get Started Now
+          <a href="/signup">Get Started Now</a>
         </motion.button>
       </section>
 
