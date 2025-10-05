@@ -259,6 +259,135 @@ export default function ProjectListingPage() {
                     </select>
                     {errors.domain && <p className="text-red-500 text-sm mt-1 flex items-center gap-1"><AlertCircle size={14} />{errors.domain}</p>}
                   </div>
+
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">Project Description *</label>
+                    <textarea
+                      name="desc"
+                      value={projectData.desc}
+                      onChange={handleChange}
+                      placeholder="Provide a detailed description of your project, objectives, and expected outcomes..."
+                      rows="6"
+                      className={`w-full border-2 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 transition ${
+                        errors.desc ? 'border-red-500' : 'border-gray-200'
+                      }`}
+                    />
+                    {errors.desc && <p className="text-red-500 text-sm mt-1 flex items-center gap-1"><AlertCircle size={14} />{errors.desc}</p>}
+                    <p className="text-sm text-gray-500 mt-1">{projectData.desc.length} characters</p>
+                  </div>
+                </motion.div>
+              )}
+
+              {/* Step 2: Project Details */}
+              {currentStep === 2 && (
+                <motion.div
+                  key="step2"
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -20 }}
+                  className="space-y-6"
+                >
+                  <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
+                    <DollarSign className="text-blue-600" />
+                    Project Details
+                  </h2>
+
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div>
+                      <label className="block text-sm font-semibold text-gray-700 mb-2">Budget Type</label>
+                      <div className="flex gap-4">
+                        <label className="flex items-center cursor-pointer">
+                          <input
+                            type="radio"
+                            name="budgetType"
+                            value="fixed"
+                            checked={projectData.budgetType === "fixed"}
+                            onChange={handleChange}
+                            className="mr-2 w-4 h-4 text-blue-600"
+                          />
+                          <span className="text-sm font-medium">Fixed Price</span>
+                        </label>
+                        <label className="flex items-center cursor-pointer">
+                          <input
+                            type="radio"
+                            name="budgetType"
+                            value="hourly"
+                            checked={projectData.budgetType === "hourly"}
+                            onChange={handleChange}
+                            className="mr-2 w-4 h-4 text-blue-600"
+                          />
+                          <span className="text-sm font-medium">Hourly Rate</span>
+                        </label>
+                      </div>
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-semibold text-gray-700 mb-2">Budget Range *</label>
+                      <input
+                        type="text"
+                        name="budget"
+                        value={projectData.budget}
+                        onChange={handleChange}
+                        placeholder="e.g., $10,000 - $50,000"
+                        className={`w-full border-2 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 transition ${
+                          errors.budget ? 'border-red-500' : 'border-gray-200'
+                        }`}
+                      />
+                      {errors.budget && <p className="text-red-500 text-sm mt-1 flex items-center gap-1"><AlertCircle size={14} />{errors.budget}</p>}
+                    </div>
+                  </div>
+
+                  <div className="grid md:grid-cols-3 gap-6">
+                    <div>
+                      <label className="block text-sm font-semibold text-gray-700 mb-2">Project Scale *</label>
+                      <select
+                        name="scale"
+                        value={projectData.scale}
+                        onChange={handleChange}
+                        className={`w-full border-2 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white transition ${
+                          errors.scale ? 'border-red-500' : 'border-gray-200'
+                        }`}
+                      >
+                        <option value="">Select Scale</option>
+                        <option value="small">Small (1-3 months)</option>
+                        <option value="medium">Medium (3-6 months)</option>
+                        <option value="large">Large (6-12 months)</option>
+                        <option value="enterprise">Enterprise (12+ months)</option>
+                      </select>
+                      {errors.scale && <p className="text-red-500 text-sm mt-1 flex items-center gap-1"><AlertCircle size={14} />{errors.scale}</p>}
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-semibold text-gray-700 mb-2">Duration *</label>
+                      <input
+                        type="text"
+                        name="duration"
+                        value={projectData.duration}
+                        onChange={handleChange}
+                        placeholder="e.g., 6 months"
+                        className={`w-full border-2 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 transition ${
+                          errors.duration ? 'border-red-500' : 'border-gray-200'
+                        }`}
+                      />
+                      {errors.duration && <p className="text-red-500 text-sm mt-1 flex items-center gap-1"><AlertCircle size={14} />{errors.duration}</p>}
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-semibold text-gray-700 mb-2">Urgency Level</label>
+                      <select
+                        name="urgency"
+                        value={projectData.urgency}
+                        onChange={handleChange}
+                        className="w-full border-2 border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white transition"
+                      >
+                        <option value="low">Low Priority</option>
+                        <option value="medium">Medium Priority</option>
+                        <option value="high">High Priority</option>
+                        <option value="urgent">Urgent</option>
+                      </select>
+                    </div>
+                  </div>
+
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
                       <label className="text-sm font-semibold text-gray-700 mb-2 flex items-center gap-2">
@@ -472,12 +601,6 @@ export default function ProjectListingPage() {
             </div>
           </form>
         </motion.div>
-
-
-
-
-
-
 
         {/* Success Modal */}
         <AnimatePresence>
