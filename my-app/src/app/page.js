@@ -170,9 +170,6 @@ export default function Home() {
             ))}
           </div>
         </div>
-        {/* <Link href="/aboutus">About</Link>
-        <Link href="/contact">Contact</Link>
-        <Link href="/signup">Sign Up</Link> */}
       </section>
     </>
   );
