@@ -4,6 +4,13 @@ import Header from "../components/header/page.jsx";
 import Footer from "../components/footer/page.jsx";
 
 
+const media = {
+  "@bp1": "(min-width: 520px)",
+  "@bp2": "(min-width: 900px)",
+  "@bp3": "(min-width: 1200px)",
+  "@bp4": "(min-width: 1800px)",
+};
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],

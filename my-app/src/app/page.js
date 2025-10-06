@@ -10,7 +10,7 @@ export default function Home() {
     /* ---------------- Home Page ---------------- */
      <>
       {/* Hero Section */}
-      <header className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-24">
+      <header className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-24 md:py-16">
         <div className="max-w-4xl mx-auto text-center px-6">
           <motion.h2
             initial={{ opacity: 0, y: -40 }}
