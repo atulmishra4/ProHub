@@ -23,9 +23,9 @@ export default function page() {
           <h4 className="text-lg font-semibold text-white mb-4">Quick Links</h4>
           <ul className="space-y-2 text-sm">
             <li><button onClick={() => window.scrollTo(0, 0)} className="hover:text-blue-300">Home</button></li>
-            <li><a href="#opportunities" className="hover:text-blue-300">Opportunities</a></li>
-            <li><a href="#about" className="hover:text-blue-300">About Us</a></li>
-            <li><a href="#contact" className="hover:text-blue-300">Contact Us</a></li>
+            <li><a href="/opportunities" className="hover:text-blue-300">Opportunities</a></li>
+            <li><a href="/contact" className="hover:text-blue-300">Contact Us</a></li>
+            <li><a href="/aboutus" className="hover:text-blue-300">About Us</a></li>
           </ul>
         </div>
 
