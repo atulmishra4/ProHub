@@ -2,16 +2,19 @@
 import React, {useState} from 'react'
 import { motion } from 'framer-motion';
 import { href } from 'react-router-dom';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 
 export default function page() {
+  const pathname = usePathname();
     const [page, setPage] = useState("home");
 
   const navLinks = [
-    { id: "home", label: "Home" },
-    { id: "opportunities", label: "Opportunities" },
-    { id: "about", label: "About Us" },
-    { id: "contact", label: "Contact Us" },
+    { id: "home", label: "Home", href: "/" },
+    { id: "opportunities", label: "Opportunities", href: "/opportunities" },
+    { id: "about", label: "About Us", href: "/aboutus" },
+    { id: "contact", label: "Contact Us", href: "/contact" },
   ];
   
   return (
@@ -19,23 +22,25 @@ export default function page() {
       {/* Navbar */}
       <nav className="bg-white shadow-md sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-          <h1
-            className="text-2xl font-bold text-blue-600 cursor-pointer"
-            onClick={() => setPage("home")}
-          >
-            ProcureHub
-          </h1>
+          <Link href="/">
+            <h1
+              className="text-2xl font-bold text-blue-600 cursor-pointer"
+              onClick={() => setPage("home")}
+            >
+              ProcureHub
+            </h1>
+          </Link>
           <div className="space-x-6 flex md:flex">
             {navLinks.map((link) => (
-              <button
+              <Link
                 key={link.id}
-                onClick={() => setPage(link.id)}
-                className={`hover:text-blue-600 ${
-                  page === link.id ? "text-blue-600 font-semibold" : ""
+                href={link.href}
+                className={`hover:text-blue-600 transition-colors ${
+                  pathname === link.href ? "text-blue-600 font-semibold" : "text-gray-700"
                 }`}
               >
                 {link.label}
-              </button>
+              </Link>
             ))}
           </div>
           <motion.button
