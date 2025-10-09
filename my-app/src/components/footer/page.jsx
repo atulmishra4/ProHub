@@ -33,7 +33,7 @@ export default function page() {
         <div>
           <h4 className="text-lg font-semibold text-white mb-4">Get in Touch</h4>
           <p className="text-sm">We’d love to hear from you. Reach out anytime.</p>
-          <p className="mt-3 text-sm">📧 atulllmishra1@gmail.com</p>
+          <p className="mt-3 text-sm">📧 mishratul@zohomail.in</p>
           <p className="text-sm">📞 +91 74588 44711</p>
           <div className="flex space-x-4 mt-4">
             <a href="https://linkedin.com" target="_blank" rel="noreferrer">

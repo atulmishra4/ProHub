@@ -55,7 +55,7 @@ export default function page() {
          <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          onClick={() => { window.location.href = "mailto:atulllmishra1@gmail.com"; }}
+          onClick={() => { window.location.href = "mailto:mishratul@zohomail.in"; }}
           className="bg-white text-blue-600 px-6 py-3 rounded-lg shadow-md font-semibold transition-all duration-300 hover:bg-gray-100 align-middle mt-7"
         >
           Contact Creator
