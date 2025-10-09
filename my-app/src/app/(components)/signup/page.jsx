@@ -748,8 +748,8 @@ export default function page() {
         {/* Terms */}
         <p className="text-center text-xs text-gray-600 mt-6">
           By signing up, you agree to ProcureHub's{" "}
-          <a href="./Terms.js" className="text-blue-600 underline" >Terms of Conditions</a> and{" "}
-          <a href="./PrivacyPolicy.js" className="text-blue-600 underline">Privacy Policy</a>
+          <a href="/termsandconditions" className="text-blue-600 underline" >Terms of Conditions</a> and{" "}
+          <a href="/privacypolicy" className="text-blue-600 underline">Privacy Policy</a>
         </p>
       </div>
     </section>

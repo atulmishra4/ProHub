@@ -8,7 +8,7 @@ export default function page() {
       <div className="max-w-4xl mx-auto px-6 text-center">
         <h3 className="text-3xl font-bold text-blue-600 mb-6">About ProcureHub</h3>
         <p className="text-md text-justify mb-6 text-gray-700">
-          hell0dsfds ProcureHub is an advanced digital procurement and contracting platform specifically engineered to address systemic inefficiencies, biases, and corruption within the IT maintenance contracting ecosystem in India.
+          ProcureHub is an advanced digital procurement and contracting platform specifically engineered to address systemic inefficiencies, biases, and corruption within the IT maintenance contracting ecosystem in India.
           By leveraging principles of transparency, anonymity, and data-driven decision-making, it ensures that every vendor can compete on equal technical and financial footing.
           Client organizations can achieve optimal value through fair competition, real-time comparisons, and standardized evaluation metrics.
           At its core, ProcureHub functions as a meritocratic marketplace that eliminates the influence of non-technical variables, directly tackling one of the most pervasive problems in India’s contracting culture—favoritism and bribery.
