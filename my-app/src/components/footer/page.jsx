@@ -2,6 +2,22 @@
 import React from 'react'
 
 export default function page() {
+  const [visitorCount, setVisitorCount] = React.useState(0);
+
+  React.useEffect(() => {
+
+    // Fetch visitor count from a mock API or local storage
+    const storedCount = sessionStorage.getItem('visitorCount');
+    if (storedCount) {
+      setVisitorCount(parseInt(storedCount) + 1);
+    } else {
+      setVisitorCount(1);
+    }
+  const newCount = storedCount ? parseInt(storedCount) + 1 : 1
+    sessionStorage.setItem('visitorCount', newCount.toString())
+  }, []);
+
+
   return (
     <footer className="bg-gradient-to-r from-blue-700 to-indigo-800 text-gray-200 pt-14 pb-8 mt-16">
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-10">
@@ -67,6 +83,9 @@ export default function page() {
       {/* Bottom Bar */}
       <div className="mt-8 border-t border-gray-600 pt-4 text-center text-sm text-gray-200">
         © {new Date().getFullYear()} ProcureHub. All rights reserved.
+      </div>
+      <div className='mt-3 md:mt-0 text-blue-300 font-semibold align-middle text-center'>
+        👥 Visitors : <span className='text-white'>{visitorCount}</span>
       </div>
     </footer>
   )
