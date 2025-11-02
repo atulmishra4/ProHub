@@ -1,66 +1,476 @@
 "use client"
-import React from 'react'
+import React from 'react';
 import { motion } from 'framer-motion';
+import { Target, Lightbulb, Heart, Shield, Zap, Users, TrendingUp, Award, Mail, Sparkles, CheckCircle } from 'lucide-react';
 
-export default function page() {
+export default function AboutPage() {
+  const features = [
+    {
+      icon: <Shield className="text-blue-600" size={28} />,
+      title: "Transparency",
+      desc: "Open, algorithm-driven comparisons replace opaque negotiations"
+    },
+    {
+      icon: <Users className="text-green-600" size={28} />,
+      title: "Equal Opportunity",
+      desc: "Level playing field for contractors of all sizes"
+    },
+    {
+      icon: <Zap className="text-purple-600" size={28} />,
+      title: "Efficiency",
+      desc: "Automated workflows and digital verification"
+    },
+    {
+      icon: <Award className="text-orange-600" size={28} />,
+      title: "Merit-Based",
+      desc: "Selection based purely on capability and pricing"
+    }
+  ];
+
+  const stats = [
+    { number: "100%", label: "Transparent Bidding" },
+    { number: "Zero", label: "Tolerance for Bribery" },
+    { number: "24/7", label: "Platform Access" },
+    { number: "Fair", label: "For Everyone" }
+  ];
+
+  const timeline = [
+    {
+      icon: <Lightbulb className="text-yellow-600" size={24} />,
+      title: "The Problem",
+      desc: "Small contractors sidelined due to lack of connections. Businesses overpaying for services. Bribery and favoritism dominating procurement."
+    },
+    {
+      icon: <Sparkles className="text-purple-600" size={24} />,
+      title: "The Vision",
+      desc: "A trustworthy, transparent marketplace where both sides engage fairly based on merit, not connections."
+    },
+    {
+      icon: <CheckCircle className="text-green-600" size={24} />,
+      title: "The Solution",
+      desc: "ProcureHub - democratizing IT procurement through anonymity, transparency, and data-driven decision-making."
+    }
+  ];
+
   return (
-    <section className="py-16 bg-gray-50">
-      <div className="max-w-4xl mx-auto px-6 text-center">
-        <h3 className="text-3xl font-bold text-blue-600 mb-6">About ProcureHub</h3>
-        <p className="text-md text-justify mb-6 text-gray-700">
-          ProcureHub is an advanced digital procurement and contracting platform specifically engineered to address systemic inefficiencies, biases, and corruption within the IT maintenance contracting ecosystem in India.
-          By leveraging principles of transparency, anonymity, and data-driven decision-making, it ensures that every vendor can compete on equal technical and financial footing.
-          Client organizations can achieve optimal value through fair competition, real-time comparisons, and standardized evaluation metrics.
-          At its core, ProcureHub functions as a meritocratic marketplace that eliminates the influence of non-technical variables, directly tackling one of the most pervasive problems in India’s contracting culture—favoritism and bribery.
-          The platform modernizes the procurement pipeline through automation, digital verification, and auditable workflows.
-          It is built upon a modular, service-oriented architecture, incorporating secure APIs for contractor onboarding, requirement publishing, bid submission, anonymization, evaluation, contract execution, and post-engagement review.
-          This ensures seamless interoperability with existing enterprise systems while maintaining data integrity and compliance with evolving cybersecurity regulations.
-          The mission of ProcureHub is to democratize access to IT maintenance contracts by removing barriers that traditionally restrict small and medium-sized contractors from competing effectively against large enterprises.
-          It enforces transparency by replacing opaque, negotiation-heavy procurement models with open, algorithm-driven comparisons.
-          It promotes fairness by anonymizing contractor identities during bidding, so that selection is determined solely by quantifiable parameters such as price competitiveness, service-level commitments, response time, and historical reliability ratings.
-          Ultimately, it aims to build institutional trust by maintaining an immutable record of all procurement transactions that can be independently audited.
-          The vision underpinning this mission is to create a corruption-resistant process embedded with accountability mechanisms, enabling India to move toward a future where digital contracting systems set new benchmarks in fairness, efficiency, and economic inclusivity.
-          For enterprises, ProcureHub delivers measurable technical benefits, including optimized cost efficiency, risk mitigation via contractor verification protocols and blockchain-backed audit trails, and improved operational productivity by automating vendor selection processes.
-          For contractors, especially small and medium enterprises, the platform provides a level playing field wherein growth is determined by demonstrable technical expertise, timely execution, and customer satisfaction.
-          Architecturally, ProcureHub leverages a layered design: the presentation layer for intuitive user interaction; the application layer for business logic; the data layer for secure storage of contracts, bids, and performance metrics; and the integration layer for connecting with external systems.
-          Security is paramount, with strict adherence to the principle of least privilege, role-based access control, and compliance with data protection standards.
-          Unlike traditional systems, ProcureHub incorporates immutable logging mechanisms, enabling every stakeholder action to be traced with cryptographic assurance, which not only enhances organizational accountability but also provides legal defensibility in the event of disputes.
-          Furthermore, the anonymization subsystem employs cryptographic pseudonymization during the tendering phase to neutralize unconscious bias.
-          The broader socioeconomic impact of ProcureHub is equally significant: by dismantling bribery-driven contracting, it fosters a healthier business environment that encourages entrepreneurship; by enforcing transparent pricing, it reduces inefficiencies that inflate costs; and by enabling regional contractors to compete nationally, it drives decentralization of economic opportunity.
-          From a governance standpoint, the platform incorporates compliance modules that align with Indian statutory requirements, including GST invoicing integration and digital signature verification.
-          The future roadmap envisions integration of AI and machine learning models to enhance contractor scoring and predict procurement risks, as well as expansion into adjacent procurement domains.
-          Ultimately, ProcureHub represents the confluence of technology, ethics, and opportunity, creating a contracting ecosystem where competence defines success, fairness defines engagement, and transparency defines trust.
-        </p>
-        <h5 className="text-xl font-semibold mb-4 mt-8 text-blue-600">
-          The origin story
-        </h5>
-        <p className="text-gray-700 mb-6">
-          ProcureHub was conceptualized on the simple realization that fairness in procurement is not a privilege, it should be a right. As industries across the globe digitalize, India too has been undergoing a massive transformation. However, procurement—especially in IT maintenance and support—still remains heavily dependent on informal networks, traditional practices, and sometimes corrupt pathways. The founders of ProcureHub had witnessed this reality firsthand. Small contractors with years of expertise were often sidelined because they lacked the right contacts or were unwilling to pay bribes to secure contracts. At the same time, businesses were unknowingly overpaying for services that were available at competitive rates from equally competent vendors. This inefficiency created frustration on both ends. It became clear that what was missing was a trustworthy, transparent, and anonymous marketplace where both sides could engage fairly. That vision became the foundation of ProcureHub.
-        </p>
-        <h5 className="text-xl font-semibold mb-4 text-blue-600">
-          Our Vision and Mission
-        </h5>
-        <p className="text-gray-700 mb-6">
-          Procurement in India is bribeless and fully transparent. Meritocracy thrives—contracts are awarded based on skills, reliability, and pricing, not on who you know. Contractors, whether big or small, urban or rural, have equal visibility and opportunity. Businesses no longer struggle with uncertainty in finding reliable partners but instead make data-driven, confident decisions. India sets a global example of fair and corruption-free IT procurement practices.
-        </p>
-        <p className="text-gray-700">
-          At ProcureHub, our mission is to democratize procurement in IT maintenance contracting by: Enabling Equal Access: Making sure that a small contractor from a small town has the same chance of winning a contract as a large enterprise contractor from a metro city. Ensuring Transparency: Eliminating hidden costs, unfair practices, and favoritism in contract bidding and execution. Promoting Anonymity: Allowing contractors to compete purely on the strength of their proposals, without bias or prejudice based on name, size, or background. Building Trust: Creating a community where businesses and contractors can interact confidently, knowing that the system ensures fairness.
-        </p>
-        <h4 className="text-2xl font-semibold mb-3 mt-4 text-blue-600">
-          About the Creator
-        </h4>
-        <p className="text-gray-700">
-          Hi, I’m <span className="font-semibold">Atul Kumar Mishra</span>, the creator of ProcureHub. I started this project with the vision of eliminating unfair practices in procurement and creating equal opportunities for all. Inspired by my personal experiences and passion for technology, I aim to make procurement simple, transparent, and impactful for everyone.
-        </p>
-         <motion.button
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          onClick={() => { window.location.href = "mailto:mishratul@zohomail.in"; }}
-          className="bg-white text-blue-600 px-6 py-3 rounded-lg shadow-md font-semibold transition-all duration-300 hover:bg-gray-100 align-middle mt-7"
-        >
-          Contact Creator
-        </motion.button>
-      </div>
-    </section>
-  )
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
+      {/* Hero Section */}
+      <section className="py-20 px-4">
+        <div className="max-w-6xl mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, y: -30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <div className="inline-block bg-blue-100 text-blue-600 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+              About ProcureHub
+            </div>
+            <h1 className="text-5xl font-bold text-gray-900 mb-6">
+              Revolutionizing IT Procurement in India
+            </h1>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              An advanced digital platform engineered to eliminate corruption, bias, and inefficiencies 
+              in IT maintenance contracting through transparency, anonymity, and merit-based selection.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-12 px-4">
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+            className="grid md:grid-cols-4 gap-6"
+          >
+            {stats.map((stat, index) => (
+              <div key={index} className="bg-white rounded-2xl shadow-lg p-6 text-center">
+                <div className="text-4xl font-bold text-blue-600 mb-2">{stat.number}</div>
+                <div className="text-gray-600 font-medium">{stat.label}</div>
+              </div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Core Features */}
+      <section className="py-16 px-4">
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">What Makes Us Different</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              ProcureHub tackles systemic problems in India's contracting culture through 
+              innovative technology and ethical principles.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {features.map((feature, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+                whileHover={{ scale: 1.05, y: -5 }}
+                className="bg-white rounded-2xl shadow-lg p-6 text-center"
+              >
+                <div className="bg-gray-100 w-16 h-16 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  {feature.icon}
+                </div>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">{feature.title}</h3>
+                <p className="text-sm text-gray-600">{feature.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Mission & Vision */}
+      <section className="py-16 px-4">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-8">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              className="bg-gradient-to-br from-blue-600 to-indigo-600 rounded-2xl shadow-xl p-8 text-white"
+            >
+              <Target size={40} className="mb-4" />
+              <h2 className="text-3xl font-bold mb-4">Our Mission</h2>
+              <p className="text-blue-100 leading-relaxed mb-4">
+                To democratize IT maintenance procurement by removing barriers that restrict 
+                small and medium contractors from competing with large enterprises.
+              </p>
+              <ul className="space-y-3 text-blue-100">
+                <li className="flex items-start gap-2">
+                  <CheckCircle size={20} className="flex-shrink-0 mt-0.5" />
+                  <span>Enable equal access for all contractor sizes</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle size={20} className="flex-shrink-0 mt-0.5" />
+                  <span>Eliminate hidden costs and favoritism</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle size={20} className="flex-shrink-0 mt-0.5" />
+                  <span>Promote anonymous, merit-based competition</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle size={20} className="flex-shrink-0 mt-0.5" />
+                  <span>Build trust through transparency and fairness</span>
+                </li>
+              </ul>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              className="bg-white rounded-2xl shadow-xl p-8"
+            >
+              <TrendingUp size={40} className="text-green-600 mb-4" />
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Vision</h2>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                A future where India sets global benchmarks for fair, corruption-free IT procurement practices.
+              </p>
+              <div className="space-y-3 text-gray-700">
+                <div className="flex items-start gap-3">
+                  <div className="bg-green-100 p-2 rounded-lg">
+                    <Shield size={20} className="text-green-600" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900">Bribeless Procurement</h4>
+                    <p className="text-sm text-gray-600">Contracts awarded based on merit, not connections</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="bg-blue-100 p-2 rounded-lg">
+                    <Users size={20} className="text-blue-600" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900">Equal Opportunity</h4>
+                    <p className="text-sm text-gray-600">Urban and rural contractors compete on level ground</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="bg-purple-100 p-2 rounded-lg">
+                    <Award size={20} className="text-purple-600" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900">Data-Driven Decisions</h4>
+                    <p className="text-sm text-gray-600">Businesses find reliable partners confidently</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Origin Story Timeline */}
+      <section className="py-16 px-4 bg-white">
+        <div className="max-w-5xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Origin Story</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              ProcureHub was born from the simple realization that fairness in procurement 
+              should be a right, not a privilege.
+            </p>
+          </motion.div>
+
+          <div className="space-y-6">
+            {timeline.map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ delay: index * 0.2 }}
+                className="flex gap-6 items-start"
+              >
+                <div className="bg-gray-100 p-4 rounded-xl flex-shrink-0">
+                  {item.icon}
+                </div>
+                <div className="flex-1 bg-gray-50 rounded-xl p-6">
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
+                  <p className="text-gray-700 leading-relaxed">{item.desc}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works */}
+      <section className="py-16 px-4">
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">How ProcureHub Works</h2>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                step: "01",
+                title: "Anonymous Bidding",
+                desc: "Contractors compete without revealing identities, eliminating bias and favoritism.",
+                color: "blue"
+              },
+              {
+                step: "02",
+                title: "Algorithm-Driven Selection",
+                desc: "Bids evaluated on merit—pricing, capability, and reliability ratings.",
+                color: "green"
+              },
+              {
+                step: "03",
+                title: "Secure Execution",
+                desc: "Blockchain-backed audit trails ensure transparency and accountability.",
+                color: "purple"
+              }
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.15 }}
+                className="bg-white rounded-2xl shadow-lg p-8 text-center"
+              >
+                <div className={`text-5xl font-bold text-${item.color}-600 mb-4 opacity-20`}>
+                  {item.step}
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
+                <p className="text-gray-600">{item.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Impact Section */}
+      <section className="py-16 px-4 bg-gradient-to-br from-green-50 to-blue-50">
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Socioeconomic Impact</h2>
+            <p className="text-gray-600 max-w-3xl mx-auto">
+              Beyond technology, ProcureHub drives meaningful change in India's business ecosystem.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              {
+                icon: <Heart className="text-red-500" size={32} />,
+                title: "Encourages Entrepreneurship",
+                desc: "Dismantles bribery-driven contracting, fostering a healthier business environment"
+              },
+              {
+                icon: <TrendingUp className="text-green-500" size={32} />,
+                title: "Reduces Costs",
+                desc: "Transparent pricing eliminates inefficiencies that inflate service costs"
+              },
+              {
+                icon: <Users className="text-blue-500" size={32} />,
+                title: "Decentralizes Opportunity",
+                desc: "Regional contractors compete nationally, spreading economic growth"
+              }
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ delay: index * 0.1 }}
+                className="bg-white rounded-2xl shadow-lg p-6 text-center"
+              >
+                <div className="bg-gray-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                  {item.icon}
+                </div>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">{item.title}</h3>
+                <p className="text-sm text-gray-600">{item.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Technical Architecture */}
+      <section className="py-16 px-4">
+        <div className="max-w-5xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            className="bg-white rounded-2xl shadow-xl p-8"
+          >
+            <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">Built for Scale & Security</h2>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+                <h3 className="text-xl font-semibold text-blue-600 mb-4">Architecture</h3>
+                <ul className="space-y-2 text-gray-700">
+                  <li className="flex items-start gap-2">
+                    <CheckCircle size={20} className="text-green-600 flex-shrink-0 mt-0.5" />
+                    <span>Modular, service-oriented design</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle size={20} className="text-green-600 flex-shrink-0 mt-0.5" />
+                    <span>Secure APIs for all operations</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle size={20} className="text-green-600 flex-shrink-0 mt-0.5" />
+                    <span>Blockchain-backed audit trails</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle size={20} className="text-green-600 flex-shrink-0 mt-0.5" />
+                    <span>Cryptographic anonymization</span>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-purple-600 mb-4">Security</h3>
+                <ul className="space-y-2 text-gray-700">
+                  <li className="flex items-start gap-2">
+                    <Shield size={20} className="text-blue-600 flex-shrink-0 mt-0.5" />
+                    <span>Role-based access control</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Shield size={20} className="text-blue-600 flex-shrink-0 mt-0.5" />
+                    <span>Immutable transaction logging</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Shield size={20} className="text-blue-600 flex-shrink-0 mt-0.5" />
+                    <span>GST & compliance integration</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Shield size={20} className="text-blue-600 flex-shrink-0 mt-0.5" />
+                    <span>Digital signature verification</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Creator Section */}
+      <section className="py-16 px-4 bg-gradient-to-br from-indigo-600 to-purple-600 text-white">
+        <div className="max-w-4xl mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center mx-auto mb-6">
+              <Users size={48} className="text-indigo-600" />
+            </div>
+            <h2 className="text-3xl font-bold mb-4">Meet the Creator</h2>
+            <p className="text-lg text-indigo-100 mb-6 max-w-2xl mx-auto">
+              Hi, I'm <span className="font-bold text-white">Atul Kumar Mishra</span>, the creator of ProcureHub. 
+              I started this project with a vision to eliminate unfair practices in procurement and create 
+              equal opportunities for all. Inspired by personal experiences and a passion for technology, 
+              I aim to make procurement simple, transparent, and impactful for everyone.
+            </p>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => { window.location.href = "mailto:mishratul@zohomail.in"; }}
+              className="bg-white text-indigo-600 px-8 py-4 rounded-xl shadow-lg font-semibold hover:bg-indigo-50 transition-all flex items-center gap-2 mx-auto"
+            >
+              <Mail size={20} />
+              Contact Creator
+            </motion.button>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-16 px-4">
+        <div className="max-w-4xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            className="bg-white rounded-2xl shadow-xl p-12 text-center"
+          >
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Ready to Transform Your Procurement?</h2>
+            <p className="text-gray-600 mb-8 text-lg">
+              Join thousands of companies and contractors who trust ProcureHub for fair, transparent bidding.
+            </p>
+            <div className="flex flex-wrap gap-4 justify-center">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => window.location.href = '/signup'}
+                className="bg-blue-600 text-white px-8 py-4 rounded-xl shadow-lg font-semibold hover:bg-blue-700 transition"
+              >
+                Get Started Today
+              </motion.button>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => window.location.href = '/opportunities'}
+                className="bg-gray-200 text-gray-700 px-8 py-4 rounded-xl font-semibold hover:bg-gray-300 transition"
+              >
+                Explore Opportunities
+              </motion.button>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+    </div>
+  );
 }

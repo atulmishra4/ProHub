@@ -473,12 +473,12 @@ Entire Agreement:
       content: `How to reach us for questions or concerns:
 
 General Inquiries:
-• Email: support@procurehub.com
+• Email: mishratul@zohomail.in
 • Response time: Within 48 hours (business days)
 • Subject: Include "Terms Inquiry" for faster routing
 
 Legal Matters:
-• Email: legal@procurehub.com
+• Email: mishratul@zohomail.in
 • For disputes, IP claims, or legal notices
 • Include all relevant documentation
 
@@ -489,7 +489,7 @@ Technical Support:
 
 Mailing Address:
 ProcureHub
-Lucknow, Uttar Pradesh
+MCAET Ambedkarnagar, Uttar Pradesh
 India
 
 Business Hours:
@@ -661,7 +661,7 @@ We aim to respond to all inquiries promptly and professionally.`
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => window.location.href = 'mailto:support@procurehub.com?subject=Terms and Conditions Inquiry'}
+              onClick={() => window.location.href = 'mailto:mishratul@zohomail.in?subject=Terms and Conditions Inquiry'}
               className="bg-blue-600 text-white px-6 py-4 rounded-xl font-semibold hover:bg-blue-700 transition flex items-center justify-center gap-2"
             >
               <Mail size={20} />
