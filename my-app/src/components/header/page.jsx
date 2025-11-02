@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
+import { href } from 'react-router-dom';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,6 +13,8 @@ export default function Header() {
     { id: "opportunities", label: "Opportunities", href: "/opportunities" },
     { id: "about", label: "About Us", href: "/aboutus" },
     { id: "contact", label: "Contact Us", href: "/contact" },
+    { id: "termsandcondition", label:"Terms & Conditions ", href:"/termsandconditions"},
+    { id: "privacypolicy", label:" Privacy Policy", href:"/privacypolicy"},
   ];
   
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
