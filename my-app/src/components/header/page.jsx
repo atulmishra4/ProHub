@@ -101,7 +101,7 @@ export default function Header() {
                     onClick={() => setIsMenuOpen(false)}
                     className="block w-full bg-blue-600 text-white text-center px-4 py-2 rounded-md transition-all duration-300 hover:bg-blue-700"
                   >
-                    Get Started
+                    Get Started 
                   </a>
                 </div>
               </div>
