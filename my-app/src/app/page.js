@@ -2,31 +2,78 @@
 import React, {useState, useEffect} from 'react'
 import {motion, AnimatePresence} from "framer-motion";
 
-
 export default function Home() {
   const [activeFaq, setActiveFaq] = useState(null);
   const [showModal, setShowModal] = useState(false);
   const [agreedToTerms, setAgreedToTerms] = useState(false);
+  const [emailSubscription, setEmailSubscription] = useState('');
+  const [subscriptionStatus, setSubscriptionStatus] = useState('');
 
   useEffect(() => {
-    const hasAgreed = localStorage.getItem('procurehub_terms_agreed');
+    // Check terms agreement from memory instead of localStorage
+    const hasAgreed = sessionStorage.getItem('procurehub_terms_agreed');
     if (!hasAgreed) {
       setShowModal(true);
       document.body.style.overflow = 'hidden';
     }
   }, []);
 
-  const handleAgree = () => {
+  const handleAgree = async () => {
     if (agreedToTerms) {
-      localStorage.setItem('procurehub_terms_agreed', 'true');
-      setShowModal(false);
-      document.body.style.overflow = 'unset';
+      try {
+        // Log agreement to backend
+        await fetch('/api/terms-agreement', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ 
+            timestamp: new Date().toISOString(),
+            userAgent: navigator.userAgent 
+          })
+        });
+        
+        sessionStorage.setItem('procurehub_terms_agreed', 'true');
+        setShowModal(false);
+        document.body.style.overflow = 'unset';
+      } catch (error) {
+        console.error('Error logging agreement:', error);
+        // Still allow user to proceed
+        sessionStorage.setItem('procurehub_terms_agreed', 'true');
+        setShowModal(false);
+        document.body.style.overflow = 'unset';
+      }
     }
   };
 
   const handleDisagree = () => {
     alert('You must agree to the terms to use ProcureHub. Redirecting...');
     window.location.href = 'https://google.com';
+  };
+
+  const handleSubscribe = async (e) => {
+    e.preventDefault();
+    setSubscriptionStatus('loading');
+    
+    try {
+      const response = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: emailSubscription })
+      });
+      
+      const data = await response.json();
+      
+      if (response.ok) {
+        setSubscriptionStatus('success');
+        setEmailSubscription('');
+        setTimeout(() => setSubscriptionStatus(''), 3000);
+      } else {
+        setSubscriptionStatus('error');
+        setTimeout(() => setSubscriptionStatus(''), 3000);
+      }
+    } catch (error) {
+      setSubscriptionStatus('error');
+      setTimeout(() => setSubscriptionStatus(''), 3000);
+    }
   };
 
   return (
@@ -215,7 +262,7 @@ export default function Home() {
                 desc: "Real-time insights into bids, projects, and contractor performance.",
               },
               {
-                title: "Verified Contractors  ",
+                title: "Verified Contractors",
                 desc: "All contractors are vetted and verified for quality and trustworthiness.",
               },
             ].map((feature, i) => (
@@ -282,7 +329,7 @@ export default function Home() {
           Sign up today and be part of the future of fair procurement.
         </p>
         <motion.button
-          id="get-started-btn "
+          id="get-started-btn"
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
           className="bg-white text-blue-600 px-6 py-3 rounded-lg shadow-md font-semibold transition-all duration-300 hover:bg-gray-100"
@@ -364,6 +411,38 @@ export default function Home() {
               </ul>
             </motion.div>
           </div>
+        </div>
+      </section>
+
+      {/* Newsletter Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-2xl mx-auto px-6 text-center">
+          <h3 className="text-3xl font-bold mb-4 text-gray-800">Stay Updated</h3>
+          <p className="text-gray-600 mb-8">
+            Subscribe to our newsletter for the latest opportunities and platform updates
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+            <input
+              type="email"
+              value={emailSubscription}
+              onChange={(e) => setEmailSubscription(e.target.value)}
+              placeholder="Enter your email"
+              className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800"
+            />
+            <button
+              onClick={handleSubscribe}
+              disabled={subscriptionStatus === 'loading' || !emailSubscription}
+              className="px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition disabled:bg-gray-400"
+            >
+              {subscriptionStatus === 'loading' ? 'Subscribing...' : 'Subscribe'}
+            </button>
+          </div>
+          {subscriptionStatus === 'success' && (
+            <p className="mt-4 text-green-600 font-semibold">✓ Successfully subscribed!</p>
+          )}
+          {subscriptionStatus === 'error' && (
+            <p className="mt-4 text-red-600 font-semibold">✗ Subscription failed. Please try again.</p>
+          )}
         </div>
       </section>
 
